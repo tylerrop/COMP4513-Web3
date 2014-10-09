@@ -36,10 +36,21 @@
 
 	    $sqlStatement = "SELECT request.*, createprogramrequest.*, users.* 
 	    				 FROM `request`, `createprogramrequest`, `users` 
-	    				 WHERE createprogramrequest.programName LIKE '%$sanitizedQuery%'   
+	    				 WHERE (
+	    				 	    	createprogramrequest.programName LIKE '%$sanitizedQuery%'
+	    				 			OR createprogramrequest.id LIKE '%$sanitizedQuery%'
+	    				 			OR CONCAT(users.firstname, ' ', users.lastname) LIKE '%$sanitizedQuery%'
+	    				 			OR users.username LIKE '%$sanitizedQuery%'
+	    				 			OR request.creationDate LIKE '%$sanitizedQuery%'
+	    				 			OR request.state LIKE '%$sanitizedQuery%'
+	    				       )
+	    			
+	    				 
 	    				 AND request.id = createprogramrequest.id 
-	    				 AND request.userId = users.userID  
-	    				 ORDER BY request.id";
+	    				 AND request.userId = users.userID
+	    				 GROUP BY request.id  
+	    				 ORDER BY request.id
+	    				 ";
 
 	    $result = mysqli_query($connection, $sqlStatement);
 	    mysqli_num_rows($result); 
@@ -47,6 +58,7 @@
 	    if (mysqli_num_rows($result) == 0) 
     	{
            $tableRows .= '<span class="orangeText">There were no results that matched your search. Please try searching a bit differently.</span>';
+    	   $query ="No defined Search terms.";
     	}
 
     	// there is a search result(s)
