@@ -5,14 +5,112 @@
 
 	$title = 'Search Results' . TITLEADDON; 
 
+	// user submitted query
+	$query = $_POST["query"];
+
+	function printSearchResults($query)
+	{
+		$tableRows = "";
+
+		$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+
+	    // check connection
+	    if (mysqli_connect_errno()) 
+	    {
+	        printf("Connect failed: %s\n", mysqli_connect_error());
+	        exit();
+	    }
+
+	    // always use SQL protection. sanitize the user's provided query string and then perform an SQL query of the db with it as a var for Program Request Name
+	    $sanitizedQuery = mysqli_real_escape_string($connection, $query);
+	    $sanitizedQuery = strip_tags($sanitizedQuery);
+	    $sanitizedQuery = htmlspecialchars($sanitizedQuery);
+
+	    $sqlStatement = "SELECT request.*, createprogramrequest.*, users.* 
+	    				 FROM `request`, `createprogramrequest`, `users` 
+	    				 WHERE createprogramrequest.programName LIKE '%$sanitizedQuery%'   
+	    				 AND request.id = createprogramrequest.id 
+	    				 AND request.userId = users.userID  
+	    				 ORDER BY request.id";
+
+	    $result = mysqli_query($connection, $sqlStatement);
+	    mysqli_num_rows($result); 
+
+	    if (mysqli_num_rows($result) == 0) 
+    	{
+           $tableRows .= '<span class="orangeText">There were no results that matched your search. Please try searching a bit differently.</span>';
+    	}
+
+    	// there is a search result(s)
+    	else
+    	{
+    		$tableRows .= '
+    					<p><small>Click the ID to view the request individually.</small></p>
+    						<div class="panel panel-default noMargins">
+						    	<small>
+						    	<!-- Table -->
+							    <table class="table noMargins">
+							        <thead>
+							     	    <tr>
+							        		<th>ID</th>
+							           		<th>Title</th>
+							            	<th class="requestName">Submitted By</th>
+							            	<th>Email</th>
+							            	<th class="requestCreation">Creation Date</th>
+							            	<th class="requestState">State</th>
+							            </tr>
+							        </thead>
+							        
+							        <tbody>
+    								';
+    	
+	    	//reading through table rows to create opton values for the table
+	    	while ($row = mysqli_fetch_array($result)) 
+		    {
+
+		    	$tableRows .= '<tr>
+					            <td><a href="singleProgram.php?programRequestID='.$row["id"].'&type='.$row["type"].'">'.$row["id"].'</a></td>
+					            <td>'.$row["programName"].'</td>
+					            <td class="requestName">'.$row["firstname"].' '.$row["lastname"].'</td>
+					            <td><a href="mailto:'.$row["username"].'?Subject='.$row["programName"].'">'.$row["username"].'</a></td>
+					            <td class="requestCreation">'.$row["creationDate"].'</td>
+					            <td class="requestState">'.$row["state"].'</td>
+					          </tr>
+					          ';
+		    }
+
+
+		    $tableRows .= '
+		    				</tbody>
+				        </table>    		
+				    </small>		
+   				</div>
+   				<!-- end of panel-->
+		    			  ';
+
+		}
+
+	    // clode db connection
+	    mysqli_close($connection);
+
+	    return $tableRows;
+
+	}
+
+
+
+
 	$content = '
+
 	<div class="container roundCorners">
 		<div class="jumbotron roundCorners medPadding">
-			<h1 class="noPadding noMargins bold">Search Results</h1> 
-      		<h2 class="noMargins"><small><span class="orangeText">This feauture is still under construction, check back soon for searching!</span></small></h2>
-	    	<p></p>
+			<h1 class="noPadding noMargins bold">Search Results for: <span class="orangeText">'.$_POST["query"].'</span></h1>  
+	    	 		
+				        '.printSearchResults($query).'
+				       
 	    </div>
 	</div>
+
 	'; 
 
 	require_once('master.php');

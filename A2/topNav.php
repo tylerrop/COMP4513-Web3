@@ -23,13 +23,14 @@ $topNav = '<div class="navbar navbar-default navbar-static-top" role="navigation
         <li><a href="#">Settings</a></li>
       </ul>-->
       
-      <form class="navbar-form navbar-right noRightPadding" role="form">
+      <form action="searchResults.php" method="POST" class="navbar-form navbar-right noRightPadding" role="form">
         <div class="form-group">
           <!-- search box -->
-          <input type="text" class="form-control" id="maxSearchWidth" placeholder="Search">
+          <input type="text" class="form-control" id="maxSearchWidth" name="query" placeholder="Search Programs">
         </div>
 
-        <a href="searchResults.php" class="btn btn-primary">Search <span class="glyphicon glyphicon-search"></span></a>
+        <button type="submit" class="btn btn-primary">Search <span class="glyphicon glyphicon-search"></span></button>
+        
         <!-- log out button -->
         <a href="logOut.php" class="btn btn-warning">Log Out <span class="glyphicon glyphicon-user"></span> '.$_SESSION["email"].'</a>
       </form>
