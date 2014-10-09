@@ -5,8 +5,16 @@
 
 	$title = 'Search Results' . TITLEADDON; 
 
-	// user submitted query
-	$query = $_POST["query"];
+	if (isset($_POST["query"])) 
+	{
+		// user submitted query
+		$query = $_POST["query"];
+	}
+	else
+	{
+		$query ="No defined Search terms.";
+	}
+
 
 	function printSearchResults($query)
 	{
@@ -104,7 +112,7 @@
 
 	<div class="container roundCorners">
 		<div class="jumbotron roundCorners medPadding">
-			<h1 class="noPadding noMargins bold">Search Results for: <span class="orangeText">'.$_POST["query"].'</span></h1>  
+			<h1 class="noPadding noMargins bold">Search Results for: <span class="orangeText">'.$query.'</span></h1>  
 	    	 		
 				        '.printSearchResults($query).'
 				       
