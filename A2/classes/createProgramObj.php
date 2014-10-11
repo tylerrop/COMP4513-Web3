@@ -20,7 +20,6 @@ class CreateProgramRequest extends Request
     private $itsImpact;
 
 
-
 	public function createNewRequestFromPost($user, $state)
 	{
 		// get user info
@@ -34,16 +33,20 @@ class CreateProgramRequest extends Request
 
 		// specific request data
 		if($_SERVER["REQUEST_METHOD"] == "POST")
-		{
-			$this->programName = $_POST['programName'];
-			$this->term = $_POST['fct'];
-			$this->rationale = $_POST['rationaleText'];
-			$this->crossImpact = $_POST['crossText'];
-			$this->studentImpact = $_POST['studentText'];
-			$this->comments = $_POST['generalText'];
-			$this->calendar = $_POST['calendarText'];
-			$this->libraryImpact = $_POST['libraryText'];
-			$this->itsImpact = $_POST['itsText'];
+		{	
+
+			$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+
+			$this->programName = mysqli_real_escape_string($connection, $_POST['programName']);
+			$this->term = mysqli_real_escape_string($connection, $_POST['fct']);
+			$this->rationale = mysqli_real_escape_string($connection, $_POST['rationaleText']);
+			$this->crossImpact = mysqli_real_escape_string($connection, $_POST['crossText']);
+			$this->studentImpact = mysqli_real_escape_string($connection, $_POST['studentText']);
+			$this->comments = mysqli_real_escape_string($connection, $_POST['generalText']);
+			$this->calendar = mysqli_real_escape_string($connection, $_POST['calendarText']);
+			$this->libraryImpact = mysqli_real_escape_string($connection, $_POST['libraryText']);
+			$this->itsImpact = mysqli_real_escape_string($connection, $_POST['itsText']);
+		
 		}
 	}
 

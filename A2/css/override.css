@@ -15,6 +15,11 @@ label {
 	font-weight: bold;
 }
 
+.fullWidth {
+	width: 100%;
+	min-width: 25px;
+}
+
 .noPadding {
 	padding: 0;
 }
@@ -109,4 +114,8 @@ label {
 	margin-right: auto;
 	margin-top: 20px;
 	margin-bottom: 0px;
+}
+
+.searchColour {
+	color: #5bc0de;
 }

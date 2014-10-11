@@ -66,18 +66,19 @@
     	{
     		$tableRows .= '
     					<p><small>Click the ID to view the request individually.</small></p>
+    					<p><small>Press a <span class="searchColour">button</span> in the table to sort by that category.</small></p>
     						<div class="panel panel-default noMargins">
 						    	<small>
 						    	<!-- Table -->
 							    <table class="table noMargins">
 							        <thead>
 							     	    <tr>
-							        		<th>ID</th>
-							           		<th>Title</th>
-							            	<th class="requestName">Submitted By</th>
-							            	<th>Email</th>
-							            	<th class="requestCreation">Creation Date</th>
-							            	<th class="requestState">State</th>
+							        		<th><a href="#" class="fullWidth btn btn-info">ID</a></th>
+							           		<th><a href="#" class="fullWidth btn btn-info">Title</a></th>
+							            	<th class="requestName"><a href="#" class="fullWidth btn btn-info">Submitted By</a></th>
+							            	<th><a href="#" class="fullWidth btn btn-info">Email</a></th>
+							            	<th class="requestCreation"><a href="#" class="fullWidth btn btn-info">Creation Date</a></th>
+							            	<th class="requestState"><a href="#" class="fullWidth btn btn-info">State</a></th>
 							            </tr>
 							        </thead>
 							        

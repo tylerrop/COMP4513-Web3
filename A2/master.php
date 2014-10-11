@@ -15,4 +15,5 @@
 	echo $content;
 
     require_once 'footer.php';
+
 ?>
