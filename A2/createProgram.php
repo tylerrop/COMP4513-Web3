@@ -52,7 +52,10 @@
 			
 			<form action="'.htmlspecialchars("createProgram.php").'" method="post" id="createRequestForm" class="form noTopPadding noPadding" role="form">        
 
-        		<div class="row">
+
+
+
+        		<div class="row" id="form1">
         			<div class="col-md-6">
                   <label for="programName" class="createReqTag">Program Name</label>
           				<input type="text" class="form-control" name="programName" placeholder="Program Name" required>
@@ -64,11 +67,18 @@
           					'.selectTerms().'
           				</select>
         			</div>
+
+              <div class="col-md-12">
+                   <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form1BTN">Continue to Part 2 <span class="glyphicon glyphicon-arrow-right"></span></button>
+              </div>
+
         		</div>
 
         
 
-        		<div class="row">
+
+
+        		<div class="row" id="form2">
         			<div class="col-md-6">
                 <label for="rationaleInputFile" class="createReqTag">Rationale</label>
                 <div class="form-group">
@@ -85,11 +95,19 @@
           				<textarea class="form-control" name="crossText" placeholder="Cross Impact" rows="5" required></textarea>
         			</div>
 
+              <div class="col-md-12">
+                <button class="btn btn-primary formPagingButtonPadding leftButton invisible" id="form2BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 1</button>
+                <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form2BTN">Continue to Part 3 <span class="glyphicon glyphicon-arrow-right"></span></button>
+              </div>
+
         		</div>
-        		
+
+
+
+
         	
 
-        		<div class="row">
+        		<div class="row" id="form3">
         			<div class="col-md-6">
                 <label for="studentInputFile" class="createReqTag">Student Impact</label>
                 <div class="form-group">
@@ -106,10 +124,15 @@
           				<textarea class="form-control" name="generalText" placeholder="General Comments" rows="5" required></textarea>
         			</div>
 
+               <div class="col-md-12">
+                <button class="btn btn-primary formPagingButtonPadding leftButton invisible" id="form3BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 2</button>
+                <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form3BTN">Continue to Part 4 <span class="glyphicon glyphicon-arrow-right"></span></button>
+              </div>
+
         		</div>
         	
 
-        		<div class="row">
+        		<div class="row" id="form4">
         		  <div class="col-md-6">
               	<label for="studentInputFile" class="createReqTag">Proposed Calendar</label>
               	<div class="form-group">
@@ -125,12 +148,17 @@
   						  </div>
           			<textarea class="form-control" name="libraryText" placeholder="Library Impact" rows="5" required></textarea>
         			</div>
+
+              <div class="col-md-12">
+                <button class="btn btn-primary formPagingButtonPadding leftButton invisible" id="form4BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 3</button>
+                <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form4BTN">Continue to Part 5 <span class="glyphicon glyphicon-arrow-right"></span></button>
+              </div>
         			
         		</div>
 
       
 
-            <div class="row">
+            <div class="row" id="form5">
               <div class="col-md-6">
                 <label for="itsIputFile" class="createReqTag">ITS Impact</label>
                 <div class="form-group">
@@ -139,16 +167,22 @@
                 <textarea class="form-control" name="itsText" placeholder="ITS Impact" rows="5" required></textarea>
               </div>
 
+               <div class="col-md-12">
+                <button class="btn btn-primary formPagingButtonPadding leftButton invisible clearAll" id="form5BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 4</button>
+              </div>
+
             </div>
 
-            <br/>
+            
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Request this Program <span class="glyphicon glyphicon-send"></span></button>
+
+            <button class="btn btn-lg btn-primary btn-block formPagingButtonPadding" name="submitProgram" id="submitProgram" type="submit">Request this Program <span class="glyphicon glyphicon-send"></span></button>
+
 
       		</form>
 
 
-
+         
 	    </div>
 	</div>
 	'; 

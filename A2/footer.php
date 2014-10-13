@@ -12,21 +12,18 @@
 
 	// if js is enabled
 	
-	echo '<script type="text/JavaScript" src="/js/js1.js"></script>';
+	// echo '<script type="text/JavaScript" src="/js/js1.js"></script>';
 	
-	$jQueryLocal = '<script src="/js/jquery-1.11.1.min.js"><\/script>';
+	// $jQueryLocal = '<script src="/js/jquery-1.11.1.min.js"><\/script>';
 
-    echo ' <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    	   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+ //    echo ' 
 
-           <script type="text/javascript">
+ //           <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-                window.jQuery ||
-                document.write("'.$jQueryLocal.'");
-
-            </script>
-         ';
+ //         ';
 ?>
+
+
 
 </body>
  

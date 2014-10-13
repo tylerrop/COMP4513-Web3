@@ -25,6 +25,11 @@
 
     <!-- Custom styles for overriding classes and defaults -->
     <link href="css/override.css" rel="stylesheet">
+  
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script type="text/JavaScript" src="/js/js1.js"></script>
 
 </head>
 

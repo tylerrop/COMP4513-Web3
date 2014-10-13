@@ -119,3 +119,25 @@ label {
 .searchColour {
 	color: #5bc0de;
 }
+
+.invisible {
+	display: none;
+}
+
+.rightButton {
+	display: block;
+	float: right;
+}
+
+.leftButton {
+	display: block;
+	float: left;
+}
+
+.formPagingButtonPadding {
+	margin-top: 15px;
+}
+
+.clearAll {
+	clear: both;
+}
