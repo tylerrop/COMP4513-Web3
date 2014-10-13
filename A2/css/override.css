@@ -11,6 +11,10 @@ label {
 	font-weight: 500;
 }
 
+textarea {
+    resize: none;
+}
+
 .bold {
 	font-weight: bold;
 }
