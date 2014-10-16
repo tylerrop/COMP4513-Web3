@@ -1,5 +1,35 @@
 $(document).ready(function()
-{	
+{
+	
+
+jQuery('#fancyForm').slippry({
+  // general elements & wrapper
+  slippryWrapper: '<div class="sy-box news-slider" />', // wrapper to wrap everything, including pager
+  elements: 'article', // elments cointaining slide content
+
+	// options
+	adaptiveHeight: true, // height of the sliders adapts to current 
+	captions: false,
+	loop: false,
+	continuous: false,
+	responsive: true,
+	useCSS: true,	
+	pause: 0,
+	auto: false,
+	preload: 'visible',
+
+	// pager
+	pagerClass: 'news-pager',
+
+	// transitions
+	transition: 'horizontal', // fade, horizontal, kenburns, false
+	speed: 1200,
+
+	// slideshow
+	autoDirection: 'prev'
+
+});
+
 	// setting up listeners
 	var form1 = document.getElementById('form1');
 		var form1BTN = document.getElementById('form1BTN');
@@ -18,36 +48,37 @@ $(document).ready(function()
 
 	var form5 = document.getElementById('form5');
 			var form5BTNPrev = document.getElementById('form5BTNPrev');
-	
+
+				
 	
 	// calls the appropriate hiding/showing for the first button
 	// form1BTN.addEventListener("click",secondHide);
-	form1BTN.addEventListener("click",nextPhaseOne);
+	// form1BTN.addEventListener("click",nextPhaseOne);
 
-	form2BTNPrev.addEventListener("click",prevPhaseTwo);
-	form2BTN.addEventListener("click",nextPhaseTwo);
+	// form2BTNPrev.addEventListener("click",prevPhaseTwo);
+	// form2BTN.addEventListener("click",nextPhaseTwo);
 
 
-	form3BTNPrev.addEventListener("click",prevPhaseThree);
-	form3BTN.addEventListener("click",nextPhaseThree);
+	// form3BTNPrev.addEventListener("click",prevPhaseThree);
+	// form3BTN.addEventListener("click",nextPhaseThree);
 
-	form4BTNPrev.addEventListener("click",prevPhaseFour);
-	form4BTN.addEventListener("click",nextPhaseFour);
+	// form4BTNPrev.addEventListener("click",prevPhaseFour);
+	// form4BTN.addEventListener("click",nextPhaseFour);
 
-	form5BTNPrev.addEventListener("click",prevPhaseFive);
+	// form5BTNPrev.addEventListener("click",prevPhaseFive);
 	
 
 	//form1BTNPrev.addEventListener("click",secondPrev);
 	//form2BTN.addEventListener("click",thirdHide);
 
 	// form1.attachEvent('onclick', secondHide())
-	form2.addEventListener();
-	form3.addEventListener();
-	form4.addEventListener();
-	form5.addEventListener();
+	// form2.addEventListener();
+	// form3.addEventListener();
+	// form4.addEventListener();
+	// form5.addEventListener();
 
 	// always runs to show only the start of the form 
-	first();
+	// first();
   	
  
 });
@@ -73,10 +104,13 @@ function first()
 // --------------------------------------------------------------------------
 // Hiding phases functions
 function hidePartOne()
-{
+{	
+	//$("#form1").fadeOut("slow").slideUp(3000);
+	// $("#createRequestForm").animate({height:'268px'}, "slow");
 	$("#form1").hide();
+	//$("#form1BTN").fadeTo( "slow" , 0);
+	//$("#form1").hide();
 	$("#form1BTN").hide();
-
 }
 
 function hidePartTwo()
@@ -120,6 +154,7 @@ function showPartOne()
 
 function showPartTwo()
 {
+	
 	$("#form2").show();
 
 		$("#form2BTNPrev").removeClass('invisible');	

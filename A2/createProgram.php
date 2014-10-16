@@ -45,6 +45,10 @@
 
 
 	$content = '
+
+  
+
+
 	<div class="container roundCorners">
 		<div class="jumbotron roundCorners medPadding">
 			<h1 class="noPadding noMargins bold">Create Program</h1>
@@ -53,112 +57,109 @@
 			<form action="'.htmlspecialchars("createProgram.php").'" method="post" id="createRequestForm" class="form noTopPadding noPadding" role="form">        
 
 
+        <section id="fancyForm">
+          
 
 
-        		<div class="row" id="form1">
-        			<div class="col-md-6">
-                  <label for="programName" class="createReqTag">Program Name</label>
-          				<input type="text" class="form-control" name="programName" placeholder="Program Name" required>
-        			</div>
+          <article>
+             
+            <div class="row relative" id="form1">
+              <div class="col-md-6">
+                <label for="programName" class="createReqTag">Program Name</label>
+                  <input type="text" class="form-control" name="programName" placeholder="Program Name" required>
+                </div>
+                  
+              <div class="col-md-6">
+                <label for="fct" class="createReqTag">First Course Term</label>
+                  <select class="form-control" name="fct" placeholder="Select a Term">
+                  '.selectTerms().'
+                  </select>
+              </div>
+            </div>
+                    
+          </article>
+
+
+
+          <article>
+            <div class="row" id="form2">
+                
+                <div class="col-md-6">
+                  <label for="rationaleInputFile" class="createReqTag">Rationale</label>
+                    <div class="form-group">
+                      <input type="file" name="rationaleInputFile" class="inputChoice">
+                    </div>
+                  <textarea class="form-control" name="rationaleText" placeholder="Rationale" rows="5" required></textarea>
+                </div>
+                
+                <div class="col-md-6">
+                    <label for="crossInputFile" class="createReqTag">Cross Impact</label>
+                      <div class="form-group">
+                        <input type="file" id="crossInputFile" class="inputChoice">
+                      </div>
+                    <textarea class="form-control" name="crossText" placeholder="Cross Impact" rows="5" required></textarea>
+                </div>
+            </div>
+
+          </article>
+         
+
+
+          <article>
+            
+            <div class="row" id="form3">
+
+                <div class="col-md-6">
+                  <label for="studentInputFile" class="createReqTag">Student Impact</label>
+                  <div class="form-group">
+                    <input type="file" name="studentInputFile" class="inputChoice">
+                  </div>
+                  <textarea class="form-control" name="studentText" student="Student Impact" rows="5" required></textarea>
+                </div>
         
-        			<div class="col-md-6">
-          				<label for="fct" class="createReqTag">First Course Term</label>
-          				<select class="form-control" name="fct" placeholder="Select a Term">
-          					'.selectTerms().'
-          				</select>
-        			</div>
+                <div class="col-md-6">
+                  <label for="generalInputFile" class="createReqTag">General Comments</label>
+                    <div class="form-group">
+                      <input type="file" name="generalInputFile" class="inputChoice">
+                    </div>
+                    <textarea class="form-control" name="generalText" placeholder="General Comments" rows="5" required></textarea>
+                </div>
+            </div>
 
-              <div class="col-md-12">
-                   <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form1BTN">Continue to Part 2 <span class="glyphicon glyphicon-arrow-right"></span></button>
+          </article>
+
+
+
+          <article>
+
+            <div class="row" id="form4">
+            
+              <div class="col-md-6">
+                <label for="studentInputFile" class="createReqTag">Proposed Calendar</label>
+                  <div class="form-group">
+                    <input type="file" name="studentInputFile" class="inputChoice">
+                  </div>
+                  <textarea class="form-control" name="calendarText" placeholder="Proposed Calendar" rows="5" required></textarea>
               </div>
 
-        		</div>
-
-        
-
-
-
-        		<div class="row" id="form2">
-        			<div class="col-md-6">
-                <label for="rationaleInputFile" class="createReqTag">Rationale</label>
-                <div class="form-group">
-    						  <input type="file" name="rationaleInputFile" class="inputChoice">
-  						  </div>
-          			<textarea class="form-control" name="rationaleText" placeholder="Rationale" rows="5" required></textarea>
-        			</div>
-        
-        			<div class="col-md-6">
-          				<label for="crossInputFile" class="createReqTag">Cross Impact</label>
-          				<div class="form-group">
-    						<input type="file" id="crossInputFile" class="inputChoice">
-  						</div>
-          				<textarea class="form-control" name="crossText" placeholder="Cross Impact" rows="5" required></textarea>
-        			</div>
-
-              <div class="col-md-12">
-                <button class="btn btn-primary formPagingButtonPadding leftButton invisible" id="form2BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 1</button>
-                <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form2BTN">Continue to Part 3 <span class="glyphicon glyphicon-arrow-right"></span></button>
-              </div>
-
-        		</div>
-
-
-
-
-        	
-
-        		<div class="row" id="form3">
-        			<div class="col-md-6">
-                <label for="studentInputFile" class="createReqTag">Student Impact</label>
-                <div class="form-group">
-    						  <input type="file" name="studentInputFile" class="inputChoice">
-  						  </div>
-          			<textarea class="form-control" name="studentText" student="Student Impact" rows="5" required></textarea>
-        			</div>
-        
-        			<div class="col-md-6">
-          				<label for="generalInputFile" class="createReqTag">General Comments</label>
-          				<div class="form-group">
-    						    <input type="file" name="generalInputFile" class="inputChoice">
-  						    </div>
-          				<textarea class="form-control" name="generalText" placeholder="General Comments" rows="5" required></textarea>
-        			</div>
-
-               <div class="col-md-12">
-                <button class="btn btn-primary formPagingButtonPadding leftButton invisible" id="form3BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 2</button>
-                <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form3BTN">Continue to Part 4 <span class="glyphicon glyphicon-arrow-right"></span></button>
-              </div>
-
-        		</div>
-        	
-
-        		<div class="row" id="form4">
-        		  <div class="col-md-6">
-              	<label for="studentInputFile" class="createReqTag">Proposed Calendar</label>
-              	<div class="form-group">
-    						  <input type="file" name="studentInputFile" class="inputChoice">
-  						  </div>
-          			<textarea class="form-control" name="calendarText" placeholder="Proposed Calendar" rows="5" required></textarea>
-        			</div>
-
-        			<div class="col-md-6">
+              <div class="col-md-6">
                 <label for="libraryInputFile" class="createReqTag">Library Impact</label>
-                <div class="form-group">
-    						  <input type="file" name="libraryInputFile" class="inputChoice">
-  						  </div>
-          			<textarea class="form-control" name="libraryText" placeholder="Library Impact" rows="5" required></textarea>
-        			</div>
-
-              <div class="col-md-12">
-                <button class="btn btn-primary formPagingButtonPadding leftButton invisible" id="form4BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 3</button>
-                <button class="btn btn-primary formPagingButtonPadding rightButton invisible" id="form4BTN">Continue to Part 5 <span class="glyphicon glyphicon-arrow-right"></span></button>
+                  <div class="form-group">
+                    <input type="file" name="libraryInputFile" class="inputChoice">
+                  </div>
+                  <textarea class="form-control" name="libraryText" placeholder="Library Impact" rows="5" required></textarea>
               </div>
-        			
-        		</div>
+  
+            </div>
 
-      
+          </article>
+
+
+
+          <article>
 
             <div class="row" id="form5">
+            
               <div class="col-md-6">
                 <label for="itsIputFile" class="createReqTag">ITS Impact</label>
                 <div class="form-group">
@@ -166,22 +167,16 @@
                 </div>
                 <textarea class="form-control" name="itsText" placeholder="ITS Impact" rows="5" required></textarea>
               </div>
-
-               <div class="col-md-12">
-                <button class="btn btn-primary formPagingButtonPadding leftButton invisible clearAll" id="form5BTNPrev"><span class="glyphicon glyphicon-arrow-left"></span> Back to Part 4</button>
-              </div>
-
-            </div>
-
             
-
+            </div>
 
             <button class="btn btn-lg btn-primary btn-block formPagingButtonPadding" name="submitProgram" id="submitProgram" type="submit">Request this Program <span class="glyphicon glyphicon-send"></span></button>
 
+          </article>
 
-      		</form>
+        </section>
 
-
+      </form>
          
 	    </div>
 	</div>
