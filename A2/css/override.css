@@ -152,3 +152,21 @@ textarea {
 .noListStyle {
 	list-style-type: none;
 }
+
+/*table sorting header override*/
+body > div:nth-child(3) > div > div > small > table {
+	}	
+
+body > div:nth-child(3) > div > div > small > table > thead > tr > th {
+	color: #fff;
+	background-color: #428bca;
+	font-weight: normal;
+}
+
+.leftRound {
+	border-top-left-radius: 4px;
+}
+
+.rightRound {
+	border-top-right-radius: 4px;
+}

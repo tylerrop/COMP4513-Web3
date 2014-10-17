@@ -36,9 +36,9 @@
 
     <link rel="stylesheet" href="/css/slippry.css" />
 
-    <script src="/sort/js/jquery.tablesorter.min.js"></script>
-
-    <link rel="stylesheet" href="/sort/css/sort-override.css" />
+    <script src="/sort-animated/tsort.min.js"></script>
+            
+    <link rel="stylesheet" href="/sort-animated/style.css" type="text/css" />
 
 </head>
 

@@ -70,26 +70,31 @@
     						<div class="panel panel-default noMargins">
 						    	<small>
 						    	<!-- Table -->
-							    <table class="table noMargins" id="keywords">
+							    <table class="tableSorter table noMargins">
 							        <thead>
 							     	    <tr>
-							        		<th>
-							        			<span class="fullWidth btn btn-info">ID</span>
+							        		<th class="leftRound">
+							        			ID
 							        		</th>
+
 							           		<th>
-							           			<span class="fullWidth btn btn-info">Title</span>
+							           			Title
 							           		</th>
-							            	<th class="requestName">
-							            		<span class="fullWidth btn btn-info">Submitted By</span>
-							            	</th>
+
 							            	<th>
-							            		<span class="fullWidth btn btn-info">Email</span>
+							            		Submitted By
 							            	</th>
-							            	<th class="requestCreation">
-							            		<span class="fullWidth btn btn-info">Creation Date</span>
+
+							            	<th>
+							            		Email
 							            	</th>
-							            	<th class="requestState">
-							            		<span class="fullWidth btn btn-info">State</span>
+
+							            	<th>
+							            		Creation Date
+							            	</th>
+
+							            	<th class="rightRound">
+							            		State
 							            	</th>
 							            </tr>
 							        </thead>
