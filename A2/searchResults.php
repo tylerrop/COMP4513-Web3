@@ -73,15 +73,15 @@
 							    <table class="tableSorter table noMargins">
 							        <thead>
 							     	    <tr>
-							        		<th class="leftRound">
+							        		<th>
 							        			ID
 							        		</th>
 
-							           		<th>
+							           		<th id="requestTitle">
 							           			Title
 							           		</th>
 
-							            	<th class="requestName">
+							            	<th id="requestName">
 							            		Submitted By
 							            	</th>
 
@@ -89,11 +89,11 @@
 							            		Email
 							            	</th>
 
-							            	<th class="requestCreation">
+							            	<th id="requestCreation">
 							            		Creation Date
 							            	</th>
 
-							            	<th class="requestState">
+							            	<th id="requestState">
 							            		State
 							            	</th>
 							            </tr>

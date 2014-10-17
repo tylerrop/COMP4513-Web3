@@ -110,6 +110,15 @@ textarea {
 
 @media screen and (max-width: 551px){.requestTitle{display:none;}}
 
+/*ID request___'s are used for the search results to be a bit better. Couldnt use classes on the sorting...*/
+@media screen and (max-width: 991px){#requestName{display:none;}}
+
+@media screen and (max-width: 660px){#requestCreation{display:none;}}
+
+@media screen and (max-width: 466px){#requestState{display:none;}}
+
+@media screen and (max-width: 551px){#requestTitle{display:none;}}
+
 @media (min-width: 768px) {#maxSearchWidth {max-width: 150px;}}
 
 @media screen and (max-width: 1200px){.smallTopMargin{margin-top: 10px;}}

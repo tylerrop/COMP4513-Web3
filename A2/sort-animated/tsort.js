@@ -132,7 +132,7 @@ Array - Specifc table
 			
 			/* STYLE TABLE */
 			// Set table to position relative
-			// $(table).css('position', 'relative');
+			$(table).css('position', 'relative');
 			
 			// Add divs for directional arrows
 			$(table).find('tr:first-child th').each(function(index) {
