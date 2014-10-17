@@ -66,19 +66,31 @@
     	{
     		$tableRows .= '
     					<p><small>Click the ID to view the request individually.</small></p>
-    					<p><small>Press a <span class="searchColour">button</span> in the table to sort by that category.</small></p>
+    					<p><small>Press a <span class="searchColour">button</span> once to sort by category descending, twice to sort in ascending.</small></p>
     						<div class="panel panel-default noMargins">
 						    	<small>
 						    	<!-- Table -->
-							    <table class="table noMargins">
+							    <table class="table noMargins" id="keywords">
 							        <thead>
 							     	    <tr>
-							        		<th><a href="#" class="fullWidth btn btn-info">ID</a></th>
-							           		<th><a href="#" class="fullWidth btn btn-info">Title</a></th>
-							            	<th class="requestName"><a href="#" class="fullWidth btn btn-info">Submitted By</a></th>
-							            	<th><a href="#" class="fullWidth btn btn-info">Email</a></th>
-							            	<th class="requestCreation"><a href="#" class="fullWidth btn btn-info">Creation Date</a></th>
-							            	<th class="requestState"><a href="#" class="fullWidth btn btn-info">State</a></th>
+							        		<th>
+							        			<span class="fullWidth btn btn-info">ID</span>
+							        		</th>
+							           		<th>
+							           			<span class="fullWidth btn btn-info">Title</span>
+							           		</th>
+							            	<th class="requestName">
+							            		<span class="fullWidth btn btn-info">Submitted By</span>
+							            	</th>
+							            	<th>
+							            		<span class="fullWidth btn btn-info">Email</span>
+							            	</th>
+							            	<th class="requestCreation">
+							            		<span class="fullWidth btn btn-info">Creation Date</span>
+							            	</th>
+							            	<th class="requestState">
+							            		<span class="fullWidth btn btn-info">State</span>
+							            	</th>
 							            </tr>
 							        </thead>
 							        

@@ -26,35 +26,19 @@
     <!-- Custom styles for overriding classes and defaults -->
     <link href="css/override.css" rel="stylesheet">
 
-
-    <!--<script type="text/JavaScript" src="/js/js1.js"></script>-->
-
-    <!-- Liquid Slider -->
-    <!-- <link rel="stylesheet" href="./liquidslider-master/css/liquid-slider.css">
-
-    <script src="./liquidslider-master/js/jquery.easing.1.3.js"></script>
-    <script src="./liquidslider-master/js/jquery.touchSwipe.min.js"></script>
-    <script src="./liquidslider-master/js/jquery.liquid-slider.min.js"></script>
-
-    <script>
-    /* If installing in the footer, you won't need $(function() {} */
-    $(function()
-    {
-         $('#slider-id').liquidSlider({continuous:false});
-    });
-
-    </script>
-   -->
-
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <script src="/js/slippry.min.js"></script>
 
+    <link href="css/news.css" rel="stylesheet">
+
     <script type="text/JavaScript" src="/js/js1.js"></script>
 
     <link rel="stylesheet" href="/css/slippry.css" />
+
+    <script src="/sort/js/jquery.tablesorter.min.js"></script>
+
+    <link rel="stylesheet" href="/sort/css/sort-override.css" />
 
 </head>
 

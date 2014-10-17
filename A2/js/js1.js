@@ -1,53 +1,45 @@
 $(document).ready(function()
 {
+	// initilize setting for jQuery Slippry slider in the form
+	jQuery('#createRequestForm > div').slippry({
+	  // general elements & wrapper
+	  slippryWrapper: '<div class="sy-box news-slider" />', // wrapper to wrap everything, including pager
+	  elements: 'article', // elments cointaining slide content
+
+		// options
+		adaptiveHeight: true, // height of the sliders adapts to current 
+		captions: false,
+		loop: false,
+		continuous: false,
+		responsive: true,
+		useCSS: true,	
+		pause: 0,
+		auto: false,
+		preload: 'visible',
+		pagerClass: 'news-pager',
+		transition: 'horizontal', // fade, horizontal, kenburns, false
+		speed: 1200,
+		slideMargin: 9
+	});
+
+	// // setting up listeners
+	// var form1 = document.getElementById('form1');
+	// 	var form1BTN = document.getElementById('form1BTN');
+
+	// var form2 = document.getElementById('form2');
+	// 	var form2BTN = document.getElementById('form2BTN');
+	// 		var form2BTNPrev = document.getElementById('form2BTNPrev');
 	
+	// var form3 = document.getElementById('form3');
+	// 	var form3BTN = document.getElementById('form3BTN');
+	// 		var form3BTNPrev = document.getElementById('form3BTNPrev');
 
-jQuery('#fancyForm').slippry({
-  // general elements & wrapper
-  slippryWrapper: '<div class="sy-box news-slider" />', // wrapper to wrap everything, including pager
-  elements: 'article', // elments cointaining slide content
+	// var form4 = document.getElementById('form4');
+	// 	var form4BTN = document.getElementById('form4BTN');
+	// 		var form4BTNPrev = document.getElementById('form4BTNPrev');
 
-	// options
-	adaptiveHeight: true, // height of the sliders adapts to current 
-	captions: false,
-	loop: false,
-	continuous: false,
-	responsive: true,
-	useCSS: true,	
-	pause: 0,
-	auto: false,
-	preload: 'visible',
-
-	// pager
-	pagerClass: 'news-pager',
-
-	// transitions
-	transition: 'horizontal', // fade, horizontal, kenburns, false
-	speed: 1200,
-
-	// slideshow
-	autoDirection: 'prev'
-
-});
-
-	// setting up listeners
-	var form1 = document.getElementById('form1');
-		var form1BTN = document.getElementById('form1BTN');
-
-	var form2 = document.getElementById('form2');
-		var form2BTN = document.getElementById('form2BTN');
-			var form2BTNPrev = document.getElementById('form2BTNPrev');
-	
-	var form3 = document.getElementById('form3');
-		var form3BTN = document.getElementById('form3BTN');
-			var form3BTNPrev = document.getElementById('form3BTNPrev');
-
-	var form4 = document.getElementById('form4');
-		var form4BTN = document.getElementById('form4BTN');
-			var form4BTNPrev = document.getElementById('form4BTNPrev');
-
-	var form5 = document.getElementById('form5');
-			var form5BTNPrev = document.getElementById('form5BTNPrev');
+	// var form5 = document.getElementById('form5');
+	// 		var form5BTNPrev = document.getElementById('form5BTNPrev');
 
 				
 	
@@ -83,173 +75,173 @@ jQuery('#fancyForm').slippry({
  
 });
 
-function first() 
-{
-	// show first part of form
-	$("#form1").show();
-		$("#form1BTN").removeClass('invisible');
+// function first() 
+// {
+// 	// show first part of form
+// 	$("#form1").show();
+// 		$("#form1BTN").removeClass('invisible');
 
-	// hide everything else
-	$("#form2").hide();
-	$("#form3").hide();
-	$("#form4").hide();
-	$("#form5").hide();
-	$("#submitProgram").hide();	
-}
+// 	// hide everything else
+// 	$("#form2").hide();
+// 	$("#form3").hide();
+// 	$("#form4").hide();
+// 	$("#form5").hide();
+// 	$("#submitProgram").hide();	
+// }
 
-// -------------------------------------------------------------------------
+// // -------------------------------------------------------------------------
 
-// ADD  CHILD SELECTORS FOR EVERYTHING ----> PUT A UNIQUE ID FOR THE PARENT DIV TO EASILY SELECT THE BUTTONS
+// // ADD  CHILD SELECTORS FOR EVERYTHING ----> PUT A UNIQUE ID FOR THE PARENT DIV TO EASILY SELECT THE BUTTONS
 
-// --------------------------------------------------------------------------
-// Hiding phases functions
-function hidePartOne()
-{	
-	//$("#form1").fadeOut("slow").slideUp(3000);
-	// $("#createRequestForm").animate({height:'268px'}, "slow");
-	$("#form1").hide();
-	//$("#form1BTN").fadeTo( "slow" , 0);
-	//$("#form1").hide();
-	$("#form1BTN").hide();
-}
+// // --------------------------------------------------------------------------
+// // Hiding phases functions
+// function hidePartOne()
+// {	
+// 	//$("#form1").fadeOut("slow").slideUp(3000);
+// 	// $("#createRequestForm").animate({height:'268px'}, "slow");
+// 	$("#form1").hide();
+// 	//$("#form1BTN").fadeTo( "slow" , 0);
+// 	//$("#form1").hide();
+// 	$("#form1BTN").hide();
+// }
 
-function hidePartTwo()
-{
-	$("#form2").hide();
-	$("#form2BTN").hide();
-	$("#form2BTNPrev").hide();
-}
+// function hidePartTwo()
+// {
+// 	$("#form2").hide();
+// 	$("#form2BTN").hide();
+// 	$("#form2BTNPrev").hide();
+// }
 
-function hidePartThree()
-{
-	$("#form3").hide();
-	$("#form3BTN").hide();
-	$("#form3BTNPrev").hide();
-}
+// function hidePartThree()
+// {
+// 	$("#form3").hide();
+// 	$("#form3BTN").hide();
+// 	$("#form3BTNPrev").hide();
+// }
 
-function hidePartFour()
-{
-	$("#form4").hide();
-	$("#form4BTN").hide();
-	$("#form4BTNPrev").hide();
-}
+// function hidePartFour()
+// {
+// 	$("#form4").hide();
+// 	$("#form4BTN").hide();
+// 	$("#form4BTNPrev").hide();
+// }
 
-function hidePartFive()
-{
-	$("#form5").hide();
-	$("#form5BTNPrev").hide();
-	$("#submitProgram").hide();
-}
+// function hidePartFive()
+// {
+// 	$("#form5").hide();
+// 	$("#form5BTNPrev").hide();
+// 	$("#submitProgram").hide();
+// }
 
 
-// --------------------------------------------------------------------------
-// Showing phases functions
-function showPartOne()
-{
-	$("#form1").show();
-	$("#form1BTN").removeClass('invisible');
-	$("#form1BTN").show();
+// // --------------------------------------------------------------------------
+// // Showing phases functions
+// function showPartOne()
+// {
+// 	$("#form1").show();
+// 	$("#form1BTN").removeClass('invisible');
+// 	$("#form1BTN").show();
 
-}
+// }
 
-function showPartTwo()
-{
+// function showPartTwo()
+// {
 	
-	$("#form2").show();
+// 	$("#form2").show();
 
-		$("#form2BTNPrev").removeClass('invisible');	
-		$("#form2BTN").removeClass('invisible');
-		$("#form2BTN").show();
-		$("#form2BTNPrev").show();	
-}
+// 		$("#form2BTNPrev").removeClass('invisible');	
+// 		$("#form2BTN").removeClass('invisible');
+// 		$("#form2BTN").show();
+// 		$("#form2BTNPrev").show();	
+// }
 
-function showPartThree()
-{
-	$("#form3").show();
+// function showPartThree()
+// {
+// 	$("#form3").show();
 
-		$("#form3BTNPrev").removeClass('invisible');	
-		$("#form3BTN").removeClass('invisible');
-		$("#form3BTN").show();
-		$("#form3BTNPrev").show();	
-}
+// 		$("#form3BTNPrev").removeClass('invisible');	
+// 		$("#form3BTN").removeClass('invisible');
+// 		$("#form3BTN").show();
+// 		$("#form3BTNPrev").show();	
+// }
 
-function showPartFour()
-{
-	$("#form4").show();
+// function showPartFour()
+// {
+// 	$("#form4").show();
 
-		$("#form4BTNPrev").removeClass('invisible');	
-		$("#form4BTN").removeClass('invisible');
-		$("#form4BTN").show();
-		$("#form4BTNPrev").show();	
-}
+// 		$("#form4BTNPrev").removeClass('invisible');	
+// 		$("#form4BTN").removeClass('invisible');
+// 		$("#form4BTN").show();
+// 		$("#form4BTNPrev").show();	
+// }
 
-function showPartFive()
-{
-	$("#form5").show();
+// function showPartFive()
+// {
+// 	$("#form5").show();
 
-		$("#form5BTNPrev").removeClass('invisible');
-		$("#form5BTNPrev").show();			
-		$("#submitProgram").show();	
-}
+// 		$("#form5BTNPrev").removeClass('invisible');
+// 		$("#form5BTNPrev").show();			
+// 		$("#submitProgram").show();	
+// }
 
-// --------------------------------------------------------------------------
-// Continuing phases functions
-//  go to phase two
-function nextPhaseOne() // good
-{
-	hidePartOne();
-	showPartTwo();
-}
-
-
-// go to phase one
-function prevPhaseTwo() // good
-{
-	hidePartTwo();
-	showPartOne();
-}
-
-//  go to phase three
-function nextPhaseTwo() // good
-{
-	hidePartTwo();
-	showPartThree();
-}
+// // --------------------------------------------------------------------------
+// // Continuing phases functions
+// //  go to phase two
+// function nextPhaseOne() // good
+// {
+// 	hidePartOne();
+// 	showPartTwo();
+// }
 
 
-// go to phase two
-function prevPhaseThree() // good
-{
-	hidePartThree();
-	showPartTwo();
-}
+// // go to phase one
+// function prevPhaseTwo() // good
+// {
+// 	hidePartTwo();
+// 	showPartOne();
+// }
 
-//  go to phase four
-function nextPhaseThree() // good
-{
-	hidePartThree();
-	showPartFour();
-}
-
-
-// go to phase three
-function prevPhaseFour() // good
-{
-	hidePartFour();
-	showPartThree();
-}
-
-//  go to phase five
-function nextPhaseFour() // good
-{
-	hidePartFour();
-	showPartFive();
-}
+// //  go to phase three
+// function nextPhaseTwo() // good
+// {
+// 	hidePartTwo();
+// 	showPartThree();
+// }
 
 
-// go to phase four
-function prevPhaseFive() // good
-{
-	hidePartFive();
-	showPartFour();
-}
+// // go to phase two
+// function prevPhaseThree() // good
+// {
+// 	hidePartThree();
+// 	showPartTwo();
+// }
+
+// //  go to phase four
+// function nextPhaseThree() // good
+// {
+// 	hidePartThree();
+// 	showPartFour();
+// }
+
+
+// // go to phase three
+// function prevPhaseFour() // good
+// {
+// 	hidePartFour();
+// 	showPartThree();
+// }
+
+// //  go to phase five
+// function nextPhaseFour() // good
+// {
+// 	hidePartFour();
+// 	showPartFive();
+// }
+
+
+// // go to phase four
+// function prevPhaseFive() // good
+// {
+// 	hidePartFive();
+// 	showPartFour();
+// }

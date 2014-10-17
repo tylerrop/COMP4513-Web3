@@ -47,8 +47,6 @@
 	$content = '
 
   
-
-
 	<div class="container roundCorners">
 		<div class="jumbotron roundCorners medPadding">
 			<h1 class="noPadding noMargins bold">Create Program</h1>
@@ -56,14 +54,11 @@
 			
 			<form action="'.htmlspecialchars("createProgram.php").'" method="post" id="createRequestForm" class="form noTopPadding noPadding" role="form">        
 
-
-        <section id="fancyForm">
+        <div>
           
-
-
           <article>
              
-            <div class="row relative" id="form1">
+            <div class="row relative">
               <div class="col-md-6">
                 <label for="programName" class="createReqTag">Program Name</label>
                   <input type="text" class="form-control" name="programName" placeholder="Program Name" required>
@@ -82,7 +77,7 @@
 
 
           <article>
-            <div class="row" id="form2">
+            <div class="row">
                 
                 <div class="col-md-6">
                   <label for="rationaleInputFile" class="createReqTag">Rationale</label>
@@ -107,7 +102,7 @@
 
           <article>
             
-            <div class="row" id="form3">
+            <div class="row">
 
                 <div class="col-md-6">
                   <label for="studentInputFile" class="createReqTag">Student Impact</label>
@@ -132,7 +127,7 @@
 
           <article>
 
-            <div class="row" id="form4">
+            <div class="row">
             
               <div class="col-md-6">
                 <label for="studentInputFile" class="createReqTag">Proposed Calendar</label>
@@ -158,7 +153,7 @@
 
           <article>
 
-            <div class="row" id="form5">
+            <div class="row">
             
               <div class="col-md-6">
                 <label for="itsIputFile" class="createReqTag">ITS Impact</label>
@@ -170,11 +165,11 @@
             
             </div>
 
-            <button class="btn btn-lg btn-primary btn-block formPagingButtonPadding" name="submitProgram" id="submitProgram" type="submit">Request this Program <span class="glyphicon glyphicon-send"></span></button>
+            <button class="btn btn-lg btn-primary formPagingButtonPadding" name="submitProgram" id="submitProgram" type="submit">Request this Program <span class="glyphicon glyphicon-send"></span></button>
 
           </article>
 
-        </section>
+        </div>
 
       </form>
          
