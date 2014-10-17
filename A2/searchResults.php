@@ -66,7 +66,7 @@
     	{
     		$tableRows .= '
     					<p><small>Click the ID to view the request individually.</small></p>
-    					<p><small>Press a <span class="searchColour">button</span> once to sort by category descending, twice to sort in ascending.</small></p>
+    					<p><small>Press a <span class="searchColour">Header</span> once to sort by category descending, again to sort in ascending.</small></p>
     						<div class="panel panel-default noMargins">
 						    	<small>
 						    	<!-- Table -->
@@ -81,7 +81,7 @@
 							           			Title
 							           		</th>
 
-							            	<th>
+							            	<th class="requestName">
 							            		Submitted By
 							            	</th>
 
@@ -89,11 +89,11 @@
 							            		Email
 							            	</th>
 
-							            	<th>
+							            	<th class="requestCreation">
 							            		Creation Date
 							            	</th>
 
-							            	<th class="rightRound">
+							            	<th class="requestState">
 							            		State
 							            	</th>
 							            </tr>
