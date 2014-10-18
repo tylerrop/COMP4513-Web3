@@ -37,7 +37,7 @@
 
 	    	$tableRows .= '<tr>
 				            <td><a href="singleProgram.php?programRequestID='.$row["id"].'&type='.$row["type"].'">'.$row["id"].'</a></td>
-				            <td>'.$row["programName"].'</td>
+				            <td><a href="singleProgram.php?programRequestID='.$row["id"].'&type='.$row["type"].'">'.$row["programName"].'</a></td>
 				            <td>'.$row["firstname"].' '.$row["lastname"].'</td>
 				            <td><a href="mailto:'.$row["username"].'?Subject='.$row["programName"].'">'.$row["username"].'</a></td>
 				            <td>'.$row["creationDate"].'</td>
@@ -58,7 +58,7 @@
 	<div class="container roundCorners">
 		<div class="jumbotron roundCorners medPadding">
 			<h1 class="noPadding noMargins bold">Approved Program Requests</h1>  
-	    	<p><small>Click the ID to view the request individually.</small></p>
+	    	<p><small>Click the ID or Title to view the request individually.</small></p>
 
 	    		<div class="panel panel-default noMargins">
 			    	<small>

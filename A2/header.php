@@ -33,6 +33,8 @@
     <link href="css/news.css" rel="stylesheet">
 
     <script type="text/JavaScript" src="/js/js1.js"></script>
+    <script type="text/JavaScript" src="/js/formContext.js"></script>
+
 
     <link rel="stylesheet" href="/css/slippry.css" />
 

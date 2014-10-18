@@ -32,7 +32,7 @@ function printFiveNewestPrograms()
     {	
     		$tableRows .= '<tr>
 			            <td><a href="singleProgram.php?programRequestID='.$row["id"].'&type='.$row["type"].'">'.$row["id"].'</a></td>
-			            <td>'.$row["programName"].'</td>
+			            <td><a href="singleProgram.php?programRequestID='.$row["id"].'&type='.$row["type"].'">'.$row["programName"].'</a></td>
 			            <td class="requestName">'.$row["firstname"].' '.$row["lastname"].'</td>
 			            <td><a href="mailto:'.$row["username"].'?Subject='.$row["programName"].'">'.$row["username"].'</a></td>
 			            <td class="requestCreation">'.$row["creationDate"].'</td>
@@ -87,7 +87,7 @@ $content = '
 	        <p></p>
 	        
 
-	        <p><small>Click the ID to view the Submission individually.</small></p>
+	        <p><small>Click the ID or Title to view the Submission individually.</small></p>
 	        
 	        <div class="panel panel-default noMargins">
 			    	<div class="panel-heading bold">Newest Program Requests</div>

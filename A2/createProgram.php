@@ -51,7 +51,11 @@
 		<div class="jumbotron roundCorners medPadding">
 			<h1 class="noPadding noMargins bold">Create Program</h1>
       <h2 class="noMargins"><small>Please fill out all fields. <span class="orangeText">Note that all file selectors are currently under development.</span></small></h2>
-			
+			   
+          <div class="invisible enteredInfo col-md-12" style="background-color: red; min-height: 20px;">
+             <div class="inner">Hello</div>
+          </div>
+
 			<form action="'.htmlspecialchars("createProgram.php").'" method="post" id="createRequestForm" class="form noTopPadding noPadding" role="form">        
 
         <div>
