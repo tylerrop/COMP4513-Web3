@@ -1,5 +1,5 @@
 <div class="container roundCorners">
-<div class="navbar navbar-default roundCorners col-md-12 col-lg-12 topMenuShrunkPadding" role="navigation">
+<div class="navbar navbar-default roundCorners col-md-12 col-lg-12 topMenuShrunkPadding" >
         <div class="container-fluid">
           <!-- <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,7 +11,7 @@
             <a class="navbar-brand" href="#">Project name</a> -->
           </div>
 
-          
+          <!-- <div class="navbar-collapse"> -->
           <div class="navbar-collapse">
             <ul class="nav navbar-nav bold">
               <!-- <li><a href="createCourse.php">Create Course</a></li>
