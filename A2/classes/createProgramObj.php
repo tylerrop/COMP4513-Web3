@@ -99,20 +99,60 @@ class CreateProgramRequest extends Request
 		mysqli_close($con);
 	}
 
+	// get program name, look for result in database, returns true if the program name is nound in db
+	private function validateProgName()
+	{
+		$con = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+		
+		// check connection
+    	if (mysqli_connect_errno()) 
+    	{
+        	printf("Connect failed: %s\n", mysqli_connect_error());
+        	exit();
+    	}
+
+
+		// check to see if name is already in the database, sanitize the input
+		$programName = mysqli_real_escape_string($con, $this->programName);
+
+		$sql = "SELECT createProgramRequest.programName FROM `createProgramRequest` 
+		     		WHERE createProgramRequest.programName = '$programName'";
+
+		$result = mysqli_query($con, $sql);
+		
+		$row = $result->fetch_assoc();
+		 
+		if(count($row) > 0 || $this->programName == "")
+		{
+		   return FALSE;
+		}
+		else
+		{
+		   return TRUE;
+		}
+	}
 
 
 	public function createTableEntries()
 	{
-		// create request table entry
-		$this->createRequestEntry();
+		if ($this->validateProgName()) 
+		{
+			
+			// create request table entry
+			$this->createRequestEntry();
 
-		// create the createProgramRequest table entry
-		$this->createSpecificRequestEntry();
+			// create the createProgramRequest table entry
+			$this->createSpecificRequestEntry();
 
-		// create approval table entries
-		$this->createApprovalEntries();
+			// create approval table entries
+			$this->createApprovalEntries();
 
-		return TRUE;
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 
 

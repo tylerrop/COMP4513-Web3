@@ -1,19 +1,24 @@
 $(document).ready(function()
 {
-	
-	// // setting up listeners
-	// var form1 = document.getElementById('form1');
-	// 	var form1BTN = document.getElementById('form1BTN');
-
-	$contextDiv = "body > div:nth-child(3) > div > div";
-
-	$($contextDiv).removeClass('invisible');
-
-	$( ".inner" ).append( "<p>Test</p>" );
+	// make the active Content Area visible is the user has JS enabled
+	$(".invisible").removeClass('invisible');
 
 	
-  	
+	// once an input is changed (Program Name, Term) then they are updated
+	$(":input").change(function()
+	{
+ 
+	      programName = $('input[name="programName"]').val();
+  		  term = $('select[name="fct"]').val();
+
+  		  $(".enteredInfo > div").empty();
+  		  $(".enteredInfo > div").append(programName + " " + term); 
+	});
+    
+ 
  
 });
 
 
+ 
+    
