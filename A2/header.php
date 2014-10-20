@@ -26,25 +26,12 @@
     <!-- Custom styles for overriding classes and defaults -->
     <link href="css/override.css" rel="stylesheet">
     
-    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-
-
-    <script src="/js/slippry.min.js"></script>
-
-    <link href="css/news.css" rel="stylesheet">
-
-    <script type="text/JavaScript" src="/js/slippryInitialization.js"></script>
-    <script type="text/JavaScript" src="/js/formContext.js"></script>
-
-
+    <!-- Styles for JS plugins -->
     <link rel="stylesheet" href="/css/slippry.css" />
-
-    <script src="/sort-animated/tsort.min.js"></script>
-            
+   
+    <link href="css/news.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="/sort-animated/style.css" type="text/css" />
-
-
 
 </head>
 
