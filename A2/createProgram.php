@@ -70,7 +70,7 @@
                 <div class="row relative">
                   <div class="col-md-6">
                     <label for="programName" class="createReqTag">Program Name</label>
-                      <input type="text" class="form-control" name="programName" placeholder="Program Name" required>
+                      <input type="text" class="required form-control" name="programName" placeholder="Program Name" required>
                     </div>
                       
                   <div class="col-md-6">
@@ -93,7 +93,7 @@
                         <div class="form-group">
                           <input type="file" name="rationaleInputFile" class="inputChoice">
                         </div>
-                      <textarea class="form-control" name="rationaleText" value="Rationale" placeholder="Rationale" rows="5" required></textarea>
+                      <textarea class="required form-control" name="rationaleText" value="Rationale" placeholder="Rationale" rows="5" required></textarea>
                     </div>
                     
                     <div class="col-md-6">
@@ -101,7 +101,7 @@
                           <div class="form-group">
                             <input type="file" id="crossInputFile" class="inputChoice">
                           </div>
-                        <textarea class="form-control" name="crossText" placeholder="Cross Impact" rows="5" required></textarea>
+                        <textarea class="required form-control" name="crossText" placeholder="Cross Impact" rows="5" required></textarea>
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@
                       <div class="form-group">
                         <input type="file" name="studentInputFile" class="inputChoice">
                       </div>
-                      <textarea class="form-control" name="studentText" student="Student Impact" rows="5" required></textarea>
+                      <textarea class="required form-control" name="studentText" student="Student Impact" rows="5" required></textarea>
                     </div>
             
                     <div class="col-md-6">
@@ -126,7 +126,7 @@
                         <div class="form-group">
                           <input type="file" name="generalInputFile" class="inputChoice">
                         </div>
-                        <textarea class="form-control" name="generalText" placeholder="General Comments" rows="5" required></textarea>
+                        <textarea class="required form-control" name="generalText" placeholder="General Comments" rows="5" required></textarea>
                     </div>
                 </div>
 
@@ -143,7 +143,7 @@
                       <div class="form-group">
                         <input type="file" name="studentInputFile" class="inputChoice">
                       </div>
-                      <textarea class="form-control" name="calendarText" placeholder="Proposed Calendar" rows="5" required></textarea>
+                      <textarea class="required form-control" name="calendarText" placeholder="Proposed Calendar" rows="5" required></textarea>
                   </div>
 
                   <div class="col-md-6">
@@ -151,7 +151,7 @@
                       <div class="form-group">
                         <input type="file" name="libraryInputFile" class="inputChoice">
                       </div>
-                      <textarea class="form-control" name="libraryText" placeholder="Library Impact" rows="5" required></textarea>
+                      <textarea class="required form-control" name="libraryText" placeholder="Library Impact" rows="5" required></textarea>
                   </div>
       
                 </div>
@@ -169,7 +169,7 @@
                     <div class="form-group">
                       <input type="file" name="itsIputFile" class="inputChoice">
                     </div>
-                    <textarea class="form-control" name="itsText" placeholder="ITS Impact" rows="5" required></textarea>
+                    <textarea class="required form-control" name="itsText" placeholder="ITS Impact" rows="5" required></textarea>
                   </div>
                 
                 </div>
