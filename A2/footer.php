@@ -6,14 +6,10 @@
     </div>
 </div> -->
 
-<!-- Sort script initialization 
-<script type="text/javascript">
-$(function(){
-  $('#keywords').tablesorter(); 
-});
-</script>
--->
 
+
+
+<!-- initiate table sorter for serach results -->
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('table.tableSorter').tableSort();

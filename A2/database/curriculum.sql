@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2014 at 03:38 AM
+-- Generation Time: Oct 20, 2014 at 07:26 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   `currentApprover` tinyint(4) NOT NULL,
   `type` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=83 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=80 ;
 
 --
 -- Dumping data for table `request`

@@ -19,17 +19,21 @@ $(document).ready(function()
  
  	
 	// ensure that all form fields are filled out...
-	$(':submit[name="submitProgram"]').on("click", function() 
+	$('#createRequestForm :submit[name="submitProgram"]').on("click", function() 
 	{
   		$('.required').each(function() 
   		{
     		if ( ($(this).val()) == "" ) 
     		{ 
       			$(this).addClass("highlight");
+      			$(this).css('border', '1px solid #f0ad4e');
+      			$(this).css('background-color', 'rgb(255, 238, 214)');
     		}
     		else
     		{
     			$(this).removeClass("highlight");
+    			$(this).css('border', '1px solid #cccccc');
+    			$(this).css('background-color', '#FFF');
     		}
   		});
 
