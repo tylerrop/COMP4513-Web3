@@ -23,7 +23,7 @@ $topNav = '<div class="navbar navbar-default navbar-static-top" role="navigation
         <li><a href="#">Settings</a></li>
       </ul>-->
       
-      <form action="searchResults.php" method="POST" class="navbar-form navbar-right noRightPadding" role="form">
+      <form action="searchResults.php" name="searchBox" method="POST" class="navbar-form navbar-right noRightPadding" role="form">
         <div class="form-group">
           <!-- search box -->
           <input type="text" class="form-control" id="maxSearchWidth" name="query" placeholder="Search Programs">

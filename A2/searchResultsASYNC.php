@@ -2,25 +2,30 @@
 
 	require_once('checkLogIn.php');
 	require_once('config.php');
+	require_once('search-data.php');
 
-	$title = 'Search Results' . TITLEADDON; 
-
-	if (isset($_POST["query"])) 
+	$title = 'Search Results ASYNC' . TITLEADDON; 
+	
+	if (isset($_SESSION["postQuery"]))
 	{
-		// user submitted query
-		$query = $_POST["query"];
+		$query = $_SESSION["postQuery"];
 	}
-	else if (isset($_GET))
+	else if (isset($_GET['query']))
 	{
-		$_SESSION["postQuery"] = $_GET["query"];
-
-		header("location: searchResultsASYNC.php");
-
+		$query = $_GET['query'];
 	}
 	else
 	{
 		$query ="No defined Search terms.";
 	}
+
+
+	// if (isset($_POST["query"])) 
+	// {
+	// 	// user submitted query
+	// 	$query = $_POST["query"];
+	// }
+	// else 
 
 
 	function printSearchResults($query)
@@ -60,6 +65,7 @@
 	    				 ";
 
 	    $result = mysqli_query($connection, $sqlStatement);
+
 	    mysqli_num_rows($result); 
 
 	    if (mysqli_num_rows($result) == 0) 
@@ -74,12 +80,13 @@
     		$tableRows .= '
     					<p><small>Click the ID or Title to view the request individually.</small></p>
     					<p><small>Press a <span class="searchColour">Header</span> once to sort by category descending, again to sort in ascending.</small></p>
+    					<p><small>Search again for quick results.</small></p>
     						<div class="panel panel-default noMargins">
 						    	<small>
 						    	<!-- Table -->
 							    <table class="tableSorter table noMargins">
 							        <thead>
-							     	    <tr>
+							     	    <tr  style="background-color: #428BCA; color: #FFF;">
 							        		<th>
 							        			ID
 							        		</th>
@@ -106,7 +113,7 @@
 							            </tr>
 							        </thead>
 							        
-							        <tbody>
+							        <tbody id="results">
     								';
     	
 	    	//reading through table rows to create opton values for the table
@@ -151,13 +158,14 @@
 		<div class="jumbotron roundCorners medPadding">
 			<h1 class="noPadding noMargins bold">Search Results for: <span class="orangeText">'.$query.'</span></h1>  
 	    	 		
-				       '.printSearchResults($query).'
-				       
+				        '.printSearchResults($query).'
+				        				       
 	    </div>
 	</div>
 
 	'; 
 
+	
 	require_once('master.php');
 
 ?>

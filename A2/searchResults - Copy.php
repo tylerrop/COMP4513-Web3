@@ -10,13 +10,6 @@
 		// user submitted query
 		$query = $_POST["query"];
 	}
-	else if (isset($_GET))
-	{
-		$_SESSION["postQuery"] = $_GET["query"];
-
-		header("location: searchResultsASYNC.php");
-
-	}
 	else
 	{
 		$query ="No defined Search terms.";
@@ -151,7 +144,7 @@
 		<div class="jumbotron roundCorners medPadding">
 			<h1 class="noPadding noMargins bold">Search Results for: <span class="orangeText">'.$query.'</span></h1>  
 	    	 		
-				       '.printSearchResults($query).'
+				        <div id="result">'.printSearchResults($query).'</div>
 				       
 	    </div>
 	</div>
