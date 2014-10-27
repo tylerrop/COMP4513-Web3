@@ -77,7 +77,8 @@
     	// there is a search result(s)
     	else
     	{
-    		$tableRows .= '
+    		$tableRows .= '<div id="results">
+
     					<p><small>Click the ID or Title to view the request individually.</small></p>
     					<p><small>Press a <span class="searchColour">Header</span> once to sort by category descending, again to sort in ascending.</small></p>
     					<p><small>Search again for quick results.</small></p>
@@ -136,6 +137,8 @@
 		    				</tbody>
 				        </table>    		
 				    </small>		
+   				</div>
+
    				</div>
    				<!-- end of panel-->
 		    			  ';

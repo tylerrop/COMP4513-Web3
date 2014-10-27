@@ -46,90 +46,11 @@ $(document).ready(function()
 	}); 
 
 
-  // variable to hold request
-  // var request;
-  // var currentPage = ($(location).attr('href'));
-  // alert(currentPage);
-
-  // if (currentPage.search("searchResultsASYNC.php") > -1 )
-  // {
-  //   // ajax search results
-  //   $('form[name="searchBox"]').submit(function(event)
-  //     {
-
-  //       // search term
-  //       var searchVal = $('input[name="query"]').val();
-  //       // get the search page url
-  //       var formURL = "searchResultsASYNC.php";
-
-  //       // setup some local variables
-  //       var $form = $(this);
-  //       // serialize the data in the form
-  //       var serializedData = $form.serialize();
-
-  //       request = $.ajax(
-  //                      {
-  //                         url: formURL,
-  //                         type: "POST",
-  //                         async: true,
-  //                         // data: serializedData,
-  //                         data: searchBox,
-  //                         dataType: 'json',
-  //                         success: function(data)
-  //                         {
-  //                           alert("success");
-  //                           // $("#result").html('Submitted successfully'+ response);
-  //                           $("#result").fadeIn(1000).append('<div>' + data.posted + '</div>')
-
-  //                         }
-  //                       }
-  //                       );
-
-  //        // callback handler that will be called on success
-  //       request.done(function (response, textStatus, jqXHR)
-  //       {
-  //         // log a message to the console
-  //         alert("Hooray, it worked!");
-  //       });
-
-  //       // callback handler that will be called on failure
-  //       request.fail(function (jqXHR, textStatus, errorThrown)
-  //       {
-  //         // log the error to the console
-  //         alert(
-  //               "The following error occured: "+
-  //               textStatus, errorThrown
-  //              );
-  //       });
-
-  //        // prevent default posting of form
-  //       event.preventDefault();
-
-      
-
-      
-
-
-  //       // $.post(formURL, {query:searchVal}).done(function(result)
-  //       // $.post(formURL, (function(result)
-  //       //                                         {
-  //       //                                           alert(result)
-  //       //                                           $('#result').html(result)
-  //       //                                         }
-  //       //                                        )
-        
-
-  //        // form.submit();
-
-  //   })
-
-  // }
-  
-
 
 
   var currentPage = ($(location).attr('href'));
-  // alert(currentPage);
+  var typingTimer;                //timer identifier
+  var doneTypingInterval = 750;  //time in ms, 5 second for example
 
   if (currentPage.search("searchResultsASYNC.php") > -1 )
   {
@@ -138,6 +59,9 @@ $(document).ready(function()
          * we want to run the .get() function. */
         $('input[name="query"]').keyup(function() 
         { 
+
+          clearTimeout(typingTimer);
+
             /* Get the value of the search input each time the keyup() method fires so we
              * can pass the value to our .get() method to retrieve the data from the database */
             var searchVal = $(this).val();
@@ -146,10 +70,13 @@ $(document).ready(function()
              * else display message to user */
             if(searchVal !== '') 
             {
-                 
+              $("#results").fadeOut(2000);
+              
+              typingTimer = setTimeout(function()
+              {
+
                 /* Fire the .get() method for and pass the searchVal data to the
                  * search-data.php file for retrieval */
-                // $.get('data/search-data.php?searchData='+searchVal, function(returnData) {
                   $.get('search-data.php',{query:searchVal}, 
                     function(returnData) 
                     {
@@ -162,13 +89,16 @@ $(document).ready(function()
                       
                       else 
                       {
-                        // $('#results').html("");
+                        $("#results").html($("#results").load("async.txt"));
+
                         $('#results').html(returnData);
-                        $('table.tableSorter').tableSort(getTableData());
-                        // $('#results').innerHTML(returnData);
                       }
+
+                      // $("#results").fadeIn(2000);
                   
                     });
+                  $("#results").fadeIn(2000);
+              }, doneTypingInterval);
 
             } 
 
@@ -177,8 +107,12 @@ $(document).ready(function()
                 // $('#results').html('No Results found');
             }
 
+          // $("#results").fadeIn(2000);            
+
         });
   
+  $("div:first").css('display','none');
+  // $("#results").fadeIn(2000);
 
   }
 
